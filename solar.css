@@ -414,7 +414,8 @@
   background: #cbd5e1;
 }
 
-/* Modal Styles */
+/* ============= FIXED MODAL STYLES ============= */
+/* Increased z-index to ensure modal appears above all elements */
 .scp-modal {
   display: none;
   position: fixed;
@@ -422,10 +423,11 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.7); /* Slightly darker for better focus */
+  z-index: 99999; /* Increased significantly */
   justify-content: center;
   align-items: center;
+  backdrop-filter: blur(3px); /* Adds a nice blur effect to background */
 }
 
 .scp-modal.active {
@@ -439,7 +441,21 @@
   max-width: 500px;
   width: 90%;
   position: relative;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  z-index: 100000; /* Even higher than the overlay */
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  animation: modalFadeIn 0.3s ease;
+}
+
+/* Add animation for smooth appearance */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .scp-modal-close {
@@ -457,6 +473,8 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  transition: all 0.2s ease;
+  z-index: 100001; /* Ensure close button is clickable */
 }
 
 .scp-modal-close:hover {
@@ -549,6 +567,11 @@
 .scp-success-message p {
   color: #64748b;
   margin: 0;
+}
+
+/* Prevent body scrolling when modal is open */
+body.modal-open {
+  overflow: hidden;
 }
 
 @media (max-width: 992px) {

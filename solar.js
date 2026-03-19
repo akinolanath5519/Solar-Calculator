@@ -313,7 +313,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Modal Functions
   function openModal() {
     modal.classList.add("active");
-    document.body.style.overflow = "hidden";
+    document.body.classList.add("modal-open"); // Use class instead of inline style
     // Reset form
     modalForm.style.display = "block";
     successMessage.style.display = "none";
@@ -325,7 +325,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function closeModalFunc() {
     modal.classList.remove("active");
-    document.body.style.overflow = "";
+    document.body.classList.remove("modal-open");
   }
 
   function validateForm() {
