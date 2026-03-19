@@ -1,0 +1,595 @@
+#solarCalcPremium {
+  font-family: Inter, Arial, sans-serif;
+  max-width: 1180px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+#solarCalcPremium * {
+  box-sizing: border-box;
+}
+
+.scp-card {
+  background: #ffffff;
+  border: 1px solid #e6edf5;
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 18px 60px rgba(15, 23, 42, 0.08);
+}
+
+.scp-header {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.scp-badge {
+  display: inline-block;
+  background: #ecfdf5;
+  color: #0D5257;
+  border: 1px solid #bbf7d0;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.scp-header h2 {
+  margin: 0 0 10px;
+  font-size: 34px;
+  line-height: 1.2;
+  color: #0f172a;
+}
+
+.scp-header p {
+  margin: 0;
+  color: #64748b;
+  font-size: 16px;
+}
+
+.scp-progress-wrap {
+  width: 100%;
+  height: 10px;
+  background: #edf2f7;
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 24px 0 14px;
+}
+
+.scp-progress-bar {
+  width: 25%;
+  height: 100%;
+  background: linear-gradient(90deg, #0D5257, #00A9BD);
+  transition: width 0.3s ease;
+}
+
+.scp-step-labels {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.scp-step-labels span {
+  text-align: center;
+  font-size: 13px;
+  color: #64748b;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.scp-step-labels span.active {
+  color: #0D5257;
+  background: #ecfdf5;
+  border-color: #00A9BD;
+  font-weight: 600;
+}
+
+.scp-step {
+  display: none;
+}
+
+.scp-step.active {
+  display: block;
+}
+
+.scp-step h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 26px;
+  color: #0f172a;
+}
+
+.scp-subsection {
+  margin-top: 26px;
+}
+
+.scp-subsection h4 {
+  margin: 0 0 12px;
+  font-size: 18px;
+  color: #1e293b;
+}
+
+.scp-note {
+  color: #64748b;
+  margin-bottom: 18px;
+}
+
+.scp-grid-2,
+.scp-grid-4 {
+  display: grid;
+  gap: 14px;
+}
+
+.scp-grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.scp-grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.scp-choice-card {
+  display: block;
+  background: #ffffff;
+  border: 1px solid #dbe4ee;
+  border-radius: 16px;
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.scp-choice-card:hover {
+  border-color: #0D5257;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(13, 82, 87, 0.08);
+}
+
+.scp-choice-card.active {
+  border-color: #0D5257;
+  background: #ecfdf5;
+  box-shadow: 0 8px 20px rgba(13, 82, 87, 0.08);
+}
+
+.scp-choice-card input {
+  display: none;
+}
+
+.scp-category-tabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.scp-tab {
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: #f8fafc;
+  border: 1px solid #dbe4ee;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.scp-tab.active {
+  background: #0D5257;
+  color: #ffffff;
+  border-color: #0D5257;
+}
+
+.scp-appliance-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.scp-appliance-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  background: #ffffff;
+  padding: 18px;
+  transition: all 0.25s ease;
+}
+
+.scp-appliance-card.enabled {
+  border-color: #00A9BD;
+  background: #ecfdf5;
+}
+
+.scp-appliance-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.scp-appliance-name {
+  font-weight: 700;
+  color: #0f172a;
+  font-size: 16px;
+}
+
+.scp-appliance-meta {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+.scp-toggle {
+  position: relative;
+  width: 52px;
+  height: 28px;
+  display: inline-block;
+}
+
+.scp-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.scp-slider {
+  position: absolute;
+  inset: 0;
+  background: #cbd5e1;
+  border-radius: 999px;
+  transition: 0.25s ease;
+}
+
+.scp-slider:before {
+  content: "";
+  position: absolute;
+  height: 22px;
+  width: 22px;
+  left: 3px;
+  top: 3px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.25s ease;
+}
+
+.scp-toggle input:checked + .scp-slider {
+  background: #0D5257;
+}
+
+.scp-toggle input:checked + .scp-slider:before {
+  transform: translateX(24px);
+}
+
+.scp-fields {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.scp-field label {
+  display: block;
+  font-size: 12px;
+  color: #475569;
+  margin-bottom: 6px;
+}
+
+.scp-field input,
+.scp-input {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 14px;
+  outline: none;
+}
+
+.scp-field input:focus,
+.scp-input:focus {
+  border-color: #00A9BD;
+}
+
+.scp-results-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.scp-result-card,
+.scp-financial-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 18px;
+  background: #f8fafc;
+}
+
+.scp-result-card.highlight {
+  background: #0D5257;
+  color: #ffffff;
+  border-color: #0D5257;
+}
+
+.scp-result-card small,
+.scp-financial-card small {
+  display: block;
+  color: #64748b;
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+
+.scp-result-card.highlight small {
+  color: #cbd5e1;
+}
+
+.scp-result-card strong,
+.scp-financial-card strong {
+  font-size: 22px;
+  color: #0f172a;
+  line-height: 1.2;
+}
+
+.scp-result-card.highlight strong {
+  color: #ffffff;
+}
+
+.scp-financial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.scp-summary-box {
+  border: 1px solid #00A9BD;
+  background: #ecfdf5;
+  border-radius: 18px;
+  padding: 18px;
+}
+
+.scp-summary-box h4 {
+  margin: 0 0 10px;
+  color: #0D5257;
+}
+
+.scp-summary-box p {
+  margin: 0;
+  line-height: 1.7;
+  color: #0D5257;
+}
+
+.scp-cta-box {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.scp-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.scp-btn {
+  display: inline-block;
+  border: none;
+  border-radius: 14px;
+  padding: 13px 22px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.scp-btn-primary {
+  background: #0D5257;
+  color: #ffffff;
+}
+
+.scp-btn-primary:hover {
+  background: #0a3f43;
+}
+
+.scp-btn-secondary {
+  background: #00A9BD;
+  color: #ffffff;
+}
+
+.scp-btn-secondary:hover {
+  background: #008c9e;
+}
+
+.scp-btn-light {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.scp-btn-light:hover {
+  background: #cbd5e1;
+}
+
+/* Modal Styles */
+.scp-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.scp-modal.active {
+  display: flex;
+}
+
+.scp-modal-content {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 32px;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.scp-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #64748b;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.scp-modal-close:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.scp-modal h3 {
+  margin: 0 0 8px 0;
+  color: #0f172a;
+  font-size: 24px;
+}
+
+.scp-modal p {
+  margin: 0 0 24px 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.scp-form-group {
+  margin-bottom: 20px;
+}
+
+.scp-form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #0f172a;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.scp-form-group input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 15px;
+  transition: all 0.2s;
+}
+
+.scp-form-group input:focus {
+  outline: none;
+  border-color: #00A9BD;
+  box-shadow: 0 0 0 3px rgba(0, 169, 189, 0.1);
+}
+
+.scp-form-group input.error {
+  border-color: #dc2626;
+}
+
+.scp-error-message {
+  color: #dc2626;
+  font-size: 12px;
+  margin-top: 4px;
+  display: none;
+}
+
+.scp-form-group input.error + .scp-error-message {
+  display: block;
+}
+
+.scp-modal-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.scp-modal-actions .scp-btn {
+  flex: 1;
+}
+
+.scp-success-message {
+  text-align: center;
+  padding: 20px;
+}
+
+.scp-success-message svg {
+  width: 64px;
+  height: 64px;
+  color: #0D5257;
+  margin-bottom: 16px;
+}
+
+.scp-success-message h4 {
+  color: #0D5257;
+  margin: 0 0 8px 0;
+  font-size: 20px;
+}
+
+.scp-success-message p {
+  color: #64748b;
+  margin: 0;
+}
+
+@media (max-width: 992px) {
+  .scp-grid-4,
+  .scp-results-grid,
+  .scp-financial-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .scp-appliance-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .scp-card {
+    padding: 20px;
+    border-radius: 18px;
+  }
+
+  .scp-header h2 {
+    font-size: 28px;
+  }
+
+  .scp-grid-2,
+  .scp-grid-4,
+  .scp-results-grid,
+  .scp-financial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .scp-step-labels {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .scp-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .scp-modal-content {
+    padding: 24px;
+    width: 95%;
+  }
+}
