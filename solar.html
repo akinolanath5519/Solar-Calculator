@@ -2,31 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Solar Calculator</title>
-
-  <!-- Link your CSS file -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Smart Solar Estimator | Solar Calculator & Quote</title>
   <link rel="stylesheet" href="solar.css">
 </head>
-
 <body>
 
-<div id="solarCalcPremium" class="scp-wrapper">
+<div id="solarCalcPremium">
   <div class="scp-card">
-
-    <!-- Header -->
     <div class="scp-header">
       <div class="scp-badge">Smart Solar Estimator</div>
       <h2>Find the Right Solar System for Your Home or Business</h2>
       <p>Estimate your power needs, backup capacity, and get a recommended solar package in minutes.</p>
     </div>
 
-    <!-- Progress -->
     <div class="scp-progress-wrap">
       <div class="scp-progress-bar" id="scpProgressBar"></div>
     </div>
 
-    <!-- Step Labels -->
     <div class="scp-step-labels">
       <span class="active">1. Property</span>
       <span>2. Appliances</span>
@@ -38,43 +31,18 @@
     <section class="scp-step active" data-step="1">
       <h3>What type of property is this for?</h3>
       <div class="scp-grid-4">
-        <label class="scp-choice-card active">
-          <input type="radio" name="scp_property_type" value="Home" checked>
-          <span>Home</span>
-        </label>
-        <label class="scp-choice-card">
-          <input type="radio" name="scp_property_type" value="Office">
-          <span> Office</span>
-        </label>
-        <label class="scp-choice-card">
-          <input type="radio" name="scp_property_type" value="Shop">
-          <span>Shop</span>
-        </label>
-        <label class="scp-choice-card">
-          <input type="radio" name="scp_property_type" value="School">
-          <span>School</span>
-        </label>
+        <label class="scp-choice-card active"><input type="radio" name="scp_property_type" value="Home" checked> Home</label>
+        <label class="scp-choice-card"><input type="radio" name="scp_property_type" value="Office"> Office</label>
+        <label class="scp-choice-card"><input type="radio" name="scp_property_type" value="Shop"> Shop</label>
+        <label class="scp-choice-card"><input type="radio" name="scp_property_type" value="School"> School</label>
       </div>
-
       <div class="scp-subsection">
         <h4>What matters most to you?</h4>
         <div class="scp-grid-2">
-          <label class="scp-choice-card active">
-            <input type="radio" name="scp_priority" value="Lower Upfront Cost" checked>
-            <span>Lower Upfront Cost</span>
-          </label>
-          <label class="scp-choice-card">
-            <input type="radio" name="scp_priority" value="Best Value">
-            <span> Best Value</span>
-          </label>
-          <label class="scp-choice-card">
-            <input type="radio" name="scp_priority" value="Comfort & Convenience">
-            <span>Comfort & Convenience</span>
-          </label>
-          <label class="scp-choice-card">
-            <input type="radio" name="scp_priority" value="Replace Generator Completely">
-            <span>Replace Generator Completely</span>
-          </label>
+          <label class="scp-choice-card active"><input type="radio" name="scp_priority" value="Lower Upfront Cost" checked> Lower Upfront Cost</label>
+          <label class="scp-choice-card"><input type="radio" name="scp_priority" value="Best Value"> Best Value</label>
+          <label class="scp-choice-card"><input type="radio" name="scp_priority" value="Comfort & Convenience"> Comfort & Convenience</label>
+          <label class="scp-choice-card"><input type="radio" name="scp_priority" value="Replace Generator Completely"> Replace Generator Completely</label>
         </div>
       </div>
     </section>
@@ -83,7 +51,6 @@
     <section class="scp-step" data-step="2">
       <h3>Select the appliances you want to power</h3>
       <p class="scp-note">Toggle appliances on/off and adjust quantity + hours per day.</p>
-
       <div class="scp-category-tabs" id="scpCategoryTabs"></div>
       <div class="scp-appliance-grid" id="scpApplianceGrid"></div>
     </section>
@@ -91,34 +58,19 @@
     <!-- STEP 3 -->
     <section class="scp-step" data-step="3">
       <h3>Tell us about your power goals</h3>
-
       <div class="scp-subsection">
         <h4>How long do you need backup power?</h4>
         <div class="scp-grid-4">
-          <label class="scp-choice-card active">
-            <input type="radio" name="scp_backup_hours" value="4" checked>
-            <span>4 Hours</span>
-          </label>
-          <label class="scp-choice-card">
-            <input type="radio" name="scp_backup_hours" value="8">
-            <span>8 Hours</span>
-          </label>
-          <label class="scp-choice-card">
-            <input type="radio" name="scp_backup_hours" value="12">
-            <span>12 Hours</span>
-          </label>
-          <label class="scp-choice-card">
-            <input type="radio" name="scp_backup_hours" value="24">
-            <span>24 Hours+</span>
-          </label>
+          <label class="scp-choice-card active"><input type="radio" name="scp_backup_hours" value="4" checked> 4 Hours</label>
+          <label class="scp-choice-card"><input type="radio" name="scp_backup_hours" value="8"> 8 Hours</label>
+          <label class="scp-choice-card"><input type="radio" name="scp_backup_hours" value="12"> 12 Hours</label>
+          <label class="scp-choice-card"><input type="radio" name="scp_backup_hours" value="24"> 24 Hours+</label>
         </div>
       </div>
-
       <div class="scp-subsection">
         <h4>Optional: Monthly Generator Fuel Spend (₦)</h4>
         <input type="number" id="scpGeneratorSpend" class="scp-input" placeholder="e.g. 80000">
       </div>
-
       <div class="scp-subsection">
         <h4>Optional: Monthly Electricity Bill (₦)</h4>
         <input type="number" id="scpGridBill" class="scp-input" placeholder="e.g. 35000">
@@ -128,115 +80,238 @@
     <!-- STEP 4 -->
     <section class="scp-step" data-step="4">
       <h3>Your Recommended Solar System</h3>
-
       <div class="scp-results-grid">
-        <div class="scp-result-card">
-          <small>Daily Energy Need</small>
-          <strong id="scpDailyEnergy">0 kWh/day</strong>
-        </div>
-        <div class="scp-result-card">
-          <small>Estimated Peak Load</small>
-          <strong id="scpPeakLoad">0 kW</strong>
-        </div>
-        <div class="scp-result-card">
-          <small>Recommended Inverter</small>
-          <strong id="scpInverter">-</strong>
-        </div>
-        <div class="scp-result-card">
-          <small>Battery Storage</small>
-          <strong id="scpBattery">-</strong>
-        </div>
-        <div class="scp-result-card">
-          <small>Solar Panel Size</small>
-          <strong id="scpSolarSize">-</strong>
-        </div>
-        <div class="scp-result-card highlight">
-          <small>Recommended Package</small>
-          <strong id="scpPackage">-</strong>
-        </div>
+        <div class="scp-result-card"><small>Daily Energy Need</small><strong id="scpDailyEnergy">0 kWh/day</strong></div>
+        <div class="scp-result-card"><small>Estimated Peak Load</small><strong id="scpPeakLoad">0 kW</strong></div>
+        <div class="scp-result-card"><small>Recommended Inverter</small><strong id="scpInverter">-</strong></div>
+        <div class="scp-result-card"><small>Battery Storage</small><strong id="scpBattery">-</strong></div>
+        <div class="scp-result-card"><small>Solar Panel Size</small><strong id="scpSolarSize">-</strong></div>
+        <div class="scp-result-card highlight"><small>Recommended Package</small><strong id="scpPackage">-</strong></div>
       </div>
-
       <div class="scp-financial-grid">
-        <div class="scp-financial-card">
-          <small>Estimated System Price Range</small>
-          <strong id="scpPriceRange">₦0 - ₦0</strong>
-        </div>
-        <div class="scp-financial-card">
-          <small>Potential Generator Savings / Month</small>
-          <strong id="scpGenSavings">₦0</strong>
-        </div>
-        <div class="scp-financial-card">
-          <small>Potential Grid Bill Offset / Month</small>
-          <strong id="scpGridSavings">₦0</strong>
-        </div>
+        <div class="scp-financial-card"><small>Estimated System Price Range</small><strong id="scpPriceRange">₦0 - ₦0</strong></div>
+        <div class="scp-financial-card"><small>Potential Generator Savings / Month</small><strong id="scpGenSavings">₦0</strong></div>
+        <div class="scp-financial-card"><small>Potential Grid Bill Offset / Month</small><strong id="scpGridSavings">₦0</strong></div>
       </div>
-
-      <div class="scp-summary-box">
-        <h4>Recommendation Summary</h4>
-        <p id="scpSummaryText"></p>
-      </div>
-
+      <div class="scp-summary-box"><h4>Recommendation Summary</h4><p id="scpSummaryText"></p></div>
       <div class="scp-cta-box">
-        <button id="scpQuoteBtn" class="scp-btn scp-btn-primary">Get My Detailed Quote</button>
+        <button id="get-quote-btn" class="scp-btn scp-btn-primary">Get Detailed Quote</button>
         <a id="scpWhatsAppBtn" href="#" target="_blank" class="scp-btn scp-btn-secondary">Chat on WhatsApp</a>
       </div>
     </section>
 
-    <!-- Navigation -->
     <div class="scp-nav">
       <button id="scpPrevBtn" class="scp-btn scp-btn-light" disabled>Previous</button>
       <button id="scpNextBtn" class="scp-btn scp-btn-primary">Next</button>
     </div>
-
   </div>
 </div>
 
-<!-- Quote Form Modal -->
-<div id="scpQuoteModal" class="scp-modal">
-  <div class="scp-modal-content">
-    <button class="scp-modal-close" id="scpCloseModal">&times;</button>
-    
-    <div id="scpModalForm">
-      <h3>Get Your Detailed Quote</h3>
-      <p>Please enter your details below and we'll send you a comprehensive quote.</p>
-      
-      <form id="scpQuoteForm">
-        <div class="scp-form-group">
-          <label for="scpName">Full Name *</label>
-          <input type="text" id="scpName" placeholder="Enter your full name" required>
-          <div class="scp-error-message">Please enter your name</div>
-        </div>
-        
-        <div class="scp-form-group">
-          <label for="scpEmail">Email Address *</label>
-          <input type="email" id="scpEmail" placeholder="Enter your email address" required>
-          <div class="scp-error-message">Please enter a valid email address</div>
-        </div>
-        
-        <div class="scp-form-group">
-          <label for="scpPhone">Phone Number (Optional)</label>
-          <input type="tel" id="scpPhone" placeholder="Enter your phone number">
-        </div>
-        
-        <div class="scp-modal-actions">
-          <button type="button" class="scp-btn scp-btn-light" id="scpCancelModal">Cancel</button>
-          <button type="submit" class="scp-btn scp-btn-primary" id="scpSubmitQuote">Submit</button>
-        </div>
-      </form>
-    </div>
-    
-    <div id="scpSuccessMessage" class="scp-success-message" style="display: none;">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-      <h4>Thank You!</h4>
-      <p>Your quote request has been submitted successfully. We'll get back to you shortly.</p>
-    </div>
-  </div>
-</div>
+<script>
+  (function() {
+    // ---------- APPLIANCE DATA ----------
+    const scpData = [
+      { category: "Lighting", name: "LED Bulb", watts: 10, qty: 6, hours: 6, enabled: true },
+      { category: "Lighting", name: "Security Light", watts: 20, qty: 2, hours: 10, enabled: false },
+      { category: "Entertainment", name: "Television", watts: 120, qty: 1, hours: 6, enabled: true },
+      { category: "Entertainment", name: "Decoder", watts: 25, qty: 1, hours: 6, enabled: true },
+      { category: "Entertainment", name: "Sound System", watts: 150, qty: 1, hours: 3, enabled: false },
+      { category: "Cooling", name: "Standing Fan", watts: 75, qty: 2, hours: 8, enabled: true },
+      { category: "Cooling", name: "Ceiling Fan", watts: 60, qty: 2, hours: 8, enabled: false },
+      { category: "Cooling", name: "Air Conditioner (1HP)", watts: 900, qty: 1, hours: 6, enabled: false },
+      { category: "Kitchen", name: "Fridge", watts: 180, qty: 1, hours: 10, enabled: true },
+      { category: "Kitchen", name: "Freezer", watts: 250, qty: 1, hours: 8, enabled: false },
+      { category: "Kitchen", name: "Microwave", watts: 1200, qty: 1, hours: 0.5, enabled: false },
+      { category: "Work & Business", name: "Laptop", watts: 65, qty: 2, hours: 8, enabled: true },
+      { category: "Work & Business", name: "Desktop Computer", watts: 200, qty: 1, hours: 8, enabled: false },
+      { category: "Work & Business", name: "Printer", watts: 100, qty: 1, hours: 1, enabled: false },
+      { category: "Work & Business", name: "WiFi Router", watts: 15, qty: 1, hours: 24, enabled: true },
+      { category: "Work & Business", name: "POS Machine", watts: 30, qty: 1, hours: 10, enabled: false },
+      { category: "Utilities", name: "Water Pump", watts: 750, qty: 1, hours: 1, enabled: false },
+      { category: "Utilities", name: "CCTV System", watts: 80, qty: 1, hours: 24, enabled: false }
+    ];
 
-<!-- Your JS -->
-<!-- Link your JavaScript file -->
-<script src="solar.js"></script>
+    let currentStep = 1;
+    const totalSteps = 4;
+    let activeCategory = "All";
+
+    const steps = document.querySelectorAll(".scp-step");
+    const stepLabels = document.querySelectorAll(".scp-step-labels span");
+    const progressBar = document.getElementById("scpProgressBar");
+    const prevBtn = document.getElementById("scpPrevBtn");
+    const nextBtn = document.getElementById("scpNextBtn");
+    const tabsContainer = document.getElementById("scpCategoryTabs");
+    const applianceGrid = document.getElementById("scpApplianceGrid");
+    
+    // Get the quote button with the correct ID
+    const quoteBtn = document.getElementById("get-quote-btn");
+
+    function formatCurrency(num) {
+      return new Intl.NumberFormat("en-NG", { style: "currency", currency: "NGN", maximumFractionDigits: 0 }).format(num);
+    }
+
+    function getSelectedValue(name, fallback = "") {
+      const selected = document.querySelector(`input[name="${name}"]:checked`);
+      return selected ? selected.value : fallback;
+    }
+
+    function mapInverter(requiredKw, priority) {
+      let adjusted = requiredKw * 1.25;
+      if (priority === "Comfort & Convenience" || priority === "Replace Generator Completely") adjusted = requiredKw * 1.35;
+      if (adjusted <= 1.2) return { label: "1.5 kVA Inverter", kVA: 1.5 };
+      if (adjusted <= 2.8) return { label: "3.5 kVA Inverter", kVA: 3.5 };
+      if (adjusted <= 4.0) return { label: "5 kVA Inverter", kVA: 5 };
+      if (adjusted <= 6.0) return { label: "7.5 kVA Inverter", kVA: 7.5 };
+      if (adjusted <= 8.0) return { label: "10 kVA Inverter", kVA: 10 };
+      return { label: "15 kVA+ Custom System", kVA: 15 };
+    }
+
+    function getPackageTier(dailyKwh, peakKw, priority) {
+      if (priority === "Lower Upfront Cost") {
+        if (dailyKwh <= 3 && peakKw <= 1.5) return "Starter Package";
+        if (dailyKwh <= 7 && peakKw <= 3.5) return "Standard Package";
+        return "Premium / Custom Package";
+      }
+      if (priority === "Replace Generator Completely") {
+        if (dailyKwh <= 6 && peakKw <= 3) return "Enhanced Standard Package";
+        if (dailyKwh <= 14 && peakKw <= 6) return "Premium Package";
+        return "Enterprise / Full Independence Package";
+      }
+      if (dailyKwh <= 3 && peakKw <= 1.5) return "Starter Package";
+      if (dailyKwh <= 8 && peakKw <= 4) return "Standard Package";
+      if (dailyKwh <= 15 && peakKw <= 7) return "Premium Package";
+      return "Enterprise / Custom Package";
+    }
+
+    function estimatePriceRange(inverterKva, batteryKwh, solarKw, priority) {
+      let base = 250000, inverterCost = inverterKva * 220000, batteryCost = batteryKwh * 280000, solarCost = solarKw * 180000;
+      let subtotal = base + inverterCost + batteryCost + solarCost;
+      if (priority === "Lower Upfront Cost") subtotal *= 0.95;
+      if (priority === "Comfort & Convenience") subtotal *= 1.08;
+      if (priority === "Replace Generator Completely") subtotal *= 1.15;
+      return { min: Math.round(subtotal * 0.92), max: Math.round(subtotal * 1.15) };
+    }
+
+    function calculateResults() {
+      const propertyType = getSelectedValue("scp_property_type", "Home");
+      const priority = getSelectedValue("scp_priority", "Best Value");
+      const backupHours = parseFloat(getSelectedValue("scp_backup_hours", "4"));
+      const generatorSpend = parseFloat(document.getElementById("scpGeneratorSpend").value) || 0;
+      const gridBill = parseFloat(document.getElementById("scpGridBill").value) || 0;
+      let totalWh = 0, totalPeakWatts = 0;
+      scpData.forEach(item => { if (item.enabled && item.qty > 0 && item.hours > 0) { totalWh += item.watts * item.qty * item.hours; totalPeakWatts += item.watts * item.qty; } });
+      const dailyKwh = totalWh / 1000;
+      let diversityFactor = (propertyType === "Office" || propertyType === "Shop") ? 0.75 : 0.7;
+      if (priority === "Replace Generator Completely") diversityFactor = 0.8;
+      const peakKw = (totalPeakWatts * diversityFactor) / 1000;
+      const avgHourlyKwh = dailyKwh / 24;
+      let backupEnergy = avgHourlyKwh * backupHours;
+      if (priority === "Replace Generator Completely") backupEnergy *= 1.15;
+      const batteryKwh = backupEnergy / 0.85;
+      const peakSunHours = 4.5, systemEfficiency = (priority === "Lower Upfront Cost") ? 0.78 : (priority === "Replace Generator Completely" ? 0.82 : 0.8);
+      const solarKw = dailyKwh / (peakSunHours * systemEfficiency);
+      const inverter = mapInverter(peakKw, priority);
+      const packageTier = getPackageTier(dailyKwh, peakKw, priority);
+      const price = estimatePriceRange(inverter.kVA, batteryKwh, solarKw, priority);
+      const genSavings = generatorSpend > 0 ? Math.round(generatorSpend * 0.65) : 0;
+      const gridSavings = gridBill > 0 ? Math.round(gridBill * 0.55) : 0;
+      document.getElementById("scpDailyEnergy").textContent = `${dailyKwh.toFixed(2)} kWh/day`;
+      document.getElementById("scpPeakLoad").textContent = `${peakKw.toFixed(2)} kW`;
+      document.getElementById("scpInverter").textContent = inverter.label;
+      document.getElementById("scpBattery").textContent = `${batteryKwh.toFixed(1)} kWh`;
+      document.getElementById("scpSolarSize").textContent = `${solarKw.toFixed(2)} kW`;
+      document.getElementById("scpPackage").textContent = packageTier;
+      document.getElementById("scpPriceRange").textContent = `${formatCurrency(price.min)} - ${formatCurrency(price.max)}`;
+      document.getElementById("scpGenSavings").textContent = formatCurrency(genSavings);
+      document.getElementById("scpGridSavings").textContent = formatCurrency(gridSavings);
+      document.getElementById("scpSummaryText").innerHTML = `Based on your selected appliances and usage pattern for this ${propertyType.toLowerCase()}, we estimate your energy demand at ${dailyKwh.toFixed(2)} kWh per day with a likely peak load of ${peakKw.toFixed(2)} kW. To support approximately ${backupHours} hours of backup, a ${inverter.label}, about ${batteryKwh.toFixed(1)} kWh battery storage, and roughly ${solarKw.toFixed(2)} kW of solar panels would be a practical starting recommendation. Your best-fit solution is our ${packageTier}, with an estimated project budget range of ${formatCurrency(price.min)} to ${formatCurrency(price.max)} depending on brand selection.`;
+      const phone = "2348078265499";
+      const waText = `Hello, I used your solar calculator and I want a detailed quote.%0AProperty Type: ${propertyType}%0APriority: ${priority}%0ADaily Energy: ${dailyKwh.toFixed(2)} kWh/day%0APeak Load: ${peakKw.toFixed(2)} kW%0ABackup Hours: ${backupHours}%0AInverter: ${inverter.label}%0ABattery: ${batteryKwh.toFixed(1)} kWh%0ASolar: ${solarKw.toFixed(2)} kW%0APackage: ${packageTier}%0APrice: ${formatCurrency(price.min)} - ${formatCurrency(price.max)}`;
+      document.getElementById("scpWhatsAppBtn").href = `https://wa.me/${phone}?text=${encodeURIComponent(waText)}`;
+    }
+
+    // UI Renders for appliances
+    function renderTabs() {
+      const categories = ["All", ...new Set(scpData.map(item => item.category))];
+      tabsContainer.innerHTML = "";
+      categories.forEach(cat => {
+        const btn = document.createElement("button");
+        btn.type = "button"; btn.className = `scp-tab ${cat === activeCategory ? "active" : ""}`;
+        btn.textContent = cat;
+        btn.addEventListener("click", () => { activeCategory = cat; renderTabs(); renderAppliances(); });
+        tabsContainer.appendChild(btn);
+      });
+    }
+    
+    function renderAppliances() {
+      applianceGrid.innerHTML = "";
+      const filtered = activeCategory === "All" ? scpData : scpData.filter(item => item.category === activeCategory);
+      filtered.forEach((item, idx) => {
+        const globalIndex = scpData.findIndex(d => d.name === item.name && d.category === item.category);
+        const card = document.createElement("div");
+        card.className = `scp-appliance-card ${item.enabled ? "enabled" : ""}`;
+        card.innerHTML = `<div class="scp-appliance-head"><div><div class="scp-appliance-name">${item.name}</div><div class="scp-appliance-meta">${item.category} • ${item.watts}W</div></div><label class="scp-toggle"><input type="checkbox" class="scp-enable" data-index="${globalIndex}" ${item.enabled ? "checked" : ""}><span class="scp-slider"></span></label></div><div class="scp-fields"><div class="scp-field"><label>Quantity</label><input type="number" min="0" step="1" class="scp-qty" data-index="${globalIndex}" value="${item.qty}"></div><div class="scp-field"><label>Hours / Day</label><input type="number" min="0" step="0.5" class="scp-hours" data-index="${globalIndex}" value="${item.hours}"></div></div>`;
+        applianceGrid.appendChild(card);
+      });
+      document.querySelectorAll(".scp-enable").forEach(el => el.addEventListener("change", function(e) { const idx = parseInt(this.dataset.index); scpData[idx].enabled = this.checked; renderAppliances(); }));
+      document.querySelectorAll(".scp-qty").forEach(el => el.addEventListener("input", function() { const idx = parseInt(this.dataset.index); scpData[idx].qty = parseFloat(this.value) || 0; }));
+      document.querySelectorAll(".scp-hours").forEach(el => el.addEventListener("input", function() { const idx = parseInt(this.dataset.index); scpData[idx].hours = parseFloat(this.value) || 0; }));
+    }
+
+    function updateChoiceCards() { 
+      document.querySelectorAll('.scp-choice-card input[type="radio"]').forEach(input => { 
+        input.addEventListener("change", function() { 
+          const name = this.name; 
+          document.querySelectorAll(`input[name="${name}"]`).forEach(radio => radio.closest(".scp-choice-card").classList.remove("active")); 
+          this.closest(".scp-choice-card").classList.add("active"); 
+        }); 
+      }); 
+    }
+
+    function showStep(step) { 
+      steps.forEach(s => s.classList.remove("active")); 
+      document.querySelector(`.scp-step[data-step="${step}"]`).classList.add("active"); 
+      stepLabels.forEach((l,i)=>l.classList.toggle("active", i===step-1)); 
+      progressBar.style.width = `${(step/totalSteps)*100}%`; 
+      prevBtn.disabled = step===1; 
+      nextBtn.textContent = step===totalSteps ? "Recalculate" : "Next"; 
+      if(step===4) calculateResults(); 
+    }
+
+    // Popup Maker Integration - Call the external popup when button is clicked
+    if(quoteBtn) {
+      quoteBtn.addEventListener("click", function(e) {
+        e.preventDefault();
+        // Open Popup Maker popup with ID 1088
+        if (typeof PUM !== "undefined") {
+          PUM.open(1088);
+        } else {
+          console.warn("Popup Maker is not loaded.");
+        }
+      });
+    }
+
+    nextBtn.addEventListener("click", function() { 
+      if(currentStep < totalSteps) { 
+        currentStep++; 
+        showStep(currentStep); 
+      } else { 
+        calculateResults(); 
+      } 
+    });
+    
+    prevBtn.addEventListener("click", function() { 
+      if(currentStep > 1) { 
+        currentStep--; 
+        showStep(currentStep); 
+      } 
+    });
+    
+    renderTabs(); 
+    renderAppliances(); 
+    updateChoiceCards(); 
+    showStep(1);
+  })();
+</script>
 </body>
 </html>
